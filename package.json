@@ -1,13 +1,10 @@
 {
   "name": "voipms-sms-server",
   "version": "0.1.0",
-  "description": "",
-  "homepage": "",
+  "description": "Sends push notifications to VoIP.ms SMS users using Google Cloud Messaging in response to SMS callbacks from VoIP.ms.",
+  "homepage": "https://github.com/michaelkourlas/voipms-sms-server",
   "license": "MIT",
-  "author": {
-    "name": "Michael Kourlas",
-    "email": "michael@kourlas.net"
-  },
+  "author": "Michael Kourlas <michael@kourlas.net>",
   "main": "server.js",
   "scripts": {
     "start": "supervisor server.js"

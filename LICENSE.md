@@ -1,4 +1,4 @@
-VoIP.ms SMS GCM Server is licensed under the MIT license:
+VoIP.ms SMS Server is licensed under the MIT license:
 
     Copyright (C) 2015 Michael Kourlas
 

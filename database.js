@@ -1,5 +1,5 @@
 /**
- * VoIP.ms SMS GCM Server
+ * VoIP.ms SMS Server
  * Copyright (C) 2015 Michael Kourlas
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
