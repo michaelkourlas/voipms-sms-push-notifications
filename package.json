@@ -1,12 +1,19 @@
 {
   "name": "voipms-sms-server",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
+  "description": "",
+  "homepage": "",
+  "license": "MIT",
+  "author": {
+    "name": "Michael Kourlas",
+    "email": "michael@kourlas.net"
+  },
+  "main": "server.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "supervisor server.js"
   },
   "dependencies": {
-    "node-mysql": "*",
+    "mysql": "*",
     "express": "*"
   }
 }

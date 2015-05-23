@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03f2df05-5dd9-437d-b44e-bcf1bc6f2422" name="Default" comment="" />
+    <list default="true" id="03f2df05-5dd9-437d-b44e-bcf1bc6f2422" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gcm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/npm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/server_js.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/voipmssms_node_modules.xml" />
+      <change type="DELETED" beforePath="D:\Google Drive\Software Development\Projects\voipms-sms-server\.idea\runConfigurations\bin_www.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Google Drive\Software Development\Projects\voipms-sms-server\app.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Google Drive\Software Development\Projects\voipms-sms-server\bin\www" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="$PROJECT_DIR$/.gitattributes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/voipms-sms-server.iml" afterPath="$PROJECT_DIR$/.idea/voipms-sms-server.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="voipms-sms-server.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,21 +53,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.js">
+      <file leaf-file-name="gcm.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gcm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45648313">
-              <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.4098737">
+              <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="www" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/www">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -43,13 +75,34 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Html5" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/bin/www" />
+        <option value="$PROJECT_DIR$/www" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.gitattributes" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/log.js" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/public/error.html" />
+        <option value="$PROJECT_DIR$/database.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/gcm.js" />
       </list>
     </option>
   </component>
@@ -61,11 +114,12 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="612" />
-    <option name="width" value="1308" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -88,6 +142,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -109,7 +164,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -117,8 +171,18 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="FullScreen" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
-  <component name="RunManager" selected="Node.js.bin\www">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Google Drive\Software Development\Projects\voipmssms" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.server.js">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -149,10 +213,16 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.bin\www" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.server.js" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -166,28 +236,318 @@
       <option name="number" value="Default" />
       <updated>1431983104320</updated>
     </task>
+    <task id="LOCAL-00001" summary="a">
+      <created>1432165052564</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1432165052564</updated>
+    </task>
+    <task id="LOCAL-00002" summary="a">
+      <created>1432165091326</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1432165091327</updated>
+    </task>
+    <task id="LOCAL-00003" summary="a">
+      <created>1432165127206</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1432165127206</updated>
+    </task>
+    <task id="LOCAL-00004" summary="a">
+      <created>1432165185720</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1432165185720</updated>
+    </task>
+    <task id="LOCAL-00005" summary="a">
+      <created>1432166249068</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1432166249068</updated>
+    </task>
+    <task id="LOCAL-00006" summary="a">
+      <created>1432166594848</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1432166594848</updated>
+    </task>
+    <task id="LOCAL-00007" summary="a">
+      <created>1432166954255</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1432166954255</updated>
+    </task>
+    <task id="LOCAL-00008" summary="a">
+      <created>1432167094743</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1432167094743</updated>
+    </task>
+    <task id="LOCAL-00009" summary="&#10;s">
+      <created>1432167146146</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1432167146146</updated>
+    </task>
+    <task id="LOCAL-00010" summary="&#10;s">
+      <created>1432167656040</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1432167656040</updated>
+    </task>
+    <task id="LOCAL-00011" summary="&#10;s">
+      <created>1432168024814</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1432168024814</updated>
+    </task>
+    <task id="LOCAL-00012" summary="&#10;s">
+      <created>1432168622028</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1432168622028</updated>
+    </task>
+    <task id="LOCAL-00013" summary="&#10;s">
+      <created>1432168740009</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1432168740009</updated>
+    </task>
+    <task id="LOCAL-00014" summary="&#10;s">
+      <created>1432168963477</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1432168963477</updated>
+    </task>
+    <task id="LOCAL-00015" summary="&#10;s">
+      <created>1432169252243</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1432169252243</updated>
+    </task>
+    <task id="LOCAL-00016" summary="&#10;s">
+      <created>1432169374677</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1432169374677</updated>
+    </task>
+    <task id="LOCAL-00017" summary="&#10;s">
+      <created>1432170238993</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1432170238993</updated>
+    </task>
+    <task id="LOCAL-00018" summary="&#10;s">
+      <created>1432170853856</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1432170853856</updated>
+    </task>
+    <task id="LOCAL-00019" summary="&#10;s">
+      <created>1432171320390</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1432171320390</updated>
+    </task>
+    <task id="LOCAL-00020" summary="&#10;s">
+      <created>1432172223893</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1432172223893</updated>
+    </task>
+    <task id="LOCAL-00021" summary="&#10;s">
+      <created>1432172690984</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1432172690984</updated>
+    </task>
+    <task id="LOCAL-00022" summary="&#10;s">
+      <created>1432172905013</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1432172905013</updated>
+    </task>
+    <task id="LOCAL-00023" summary="&#10;s">
+      <created>1432173027580</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1432173027580</updated>
+    </task>
+    <task id="LOCAL-00024" summary="&#10;s">
+      <created>1432173137901</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1432173137901</updated>
+    </task>
+    <task id="LOCAL-00025" summary="&#10;s">
+      <created>1432173224389</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1432173224389</updated>
+    </task>
+    <task id="LOCAL-00026" summary="&#10;s">
+      <created>1432174839577</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1432174839577</updated>
+    </task>
+    <task id="LOCAL-00027" summary="&#10;s">
+      <created>1432175361795</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1432175361795</updated>
+    </task>
+    <task id="LOCAL-00028" summary="&#10;s">
+      <created>1432175506018</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1432175506018</updated>
+    </task>
+    <task id="LOCAL-00029" summary="&#10;s">
+      <created>1432175691169</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1432175691169</updated>
+    </task>
+    <task id="LOCAL-00030" summary="&#10;s">
+      <created>1432175787639</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1432175787639</updated>
+    </task>
+    <task id="LOCAL-00031" summary="&#10;s">
+      <created>1432176109106</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1432176109106</updated>
+    </task>
+    <task id="LOCAL-00032" summary="a">
+      <created>1432347152993</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1432347152993</updated>
+    </task>
+    <task id="LOCAL-00033" summary="a">
+      <created>1432347589230</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1432347589230</updated>
+    </task>
+    <task id="LOCAL-00034" summary="a">
+      <created>1432347774285</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1432347774285</updated>
+    </task>
+    <task id="LOCAL-00035" summary="a">
+      <created>1432347874534</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1432347874534</updated>
+    </task>
+    <task id="LOCAL-00036" summary="a">
+      <created>1432348188898</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1432348188898</updated>
+    </task>
+    <task id="LOCAL-00037" summary="a">
+      <created>1432348458749</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1432348458749</updated>
+    </task>
+    <task id="LOCAL-00038" summary="a">
+      <created>1432348649575</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1432348649575</updated>
+    </task>
+    <task id="LOCAL-00039" summary="a">
+      <created>1432348788106</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1432348788106</updated>
+    </task>
+    <task id="LOCAL-00040" summary="a">
+      <created>1432348896554</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1432348896554</updated>
+    </task>
+    <task id="LOCAL-00041" summary="a">
+      <created>1432348959518</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1432348959518</updated>
+    </task>
+    <task id="LOCAL-00042" summary="a">
+      <created>1432349000062</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1432349000062</updated>
+    </task>
+    <task id="LOCAL-00043" summary="a">
+      <created>1432349148735</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1432349148735</updated>
+    </task>
+    <task id="LOCAL-00044" summary="a">
+      <created>1432349581240</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1432349581240</updated>
+    </task>
+    <task id="LOCAL-00045" summary="a">
+      <created>1432349793615</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1432349793615</updated>
+    </task>
+    <task id="LOCAL-00046" summary="a">
+      <created>1432350133950</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1432350133950</updated>
+    </task>
+    <task id="LOCAL-00047" summary="a">
+      <created>1432350326382</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1432350326382</updated>
+    </task>
+    <task id="LOCAL-00048" summary="a">
+      <created>1432350526825</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1432350526825</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="612" y="0" width="1308" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20551181" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1938883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32993197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32993197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39909297" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -202,6 +562,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&#10;s" />
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="5" />
@@ -209,26 +574,133 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/www">
+    <entry file="file://$PROJECT_DIR$/gcm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gcm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gcm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gcm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.01988304">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2527881">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45648313">
-          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.019517796">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.019517796">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08056872">
+          <caret line="4" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62873566">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gcm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4098737">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
           <folding />
         </state>
       </provider>
