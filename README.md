@@ -20,4 +20,4 @@ VoIP.ms portal:
 
 ## License ##
 
-VoIP.ms SMS Server is licensed under the MIT license. Please see the LICENSE.md file for more information.
+VoIP.ms SMS Server is licensed under the Apache License 2.0. Please see the LICENSE.md file for more information.

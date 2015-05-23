@@ -1,19 +1,18 @@
-/**
+/*
  * VoIP.ms SMS Server
  * Copyright (C) 2015 Michael Kourlas
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
- * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
- * Software.
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
- * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
- * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 var database = require("./database.js");
@@ -78,23 +77,23 @@ database.connect(function(connection) {
     app.use("/register", function(req, res) {
         var did = req.query["did"];
         var registrationId = req.query["reg_id"];
+        var tag = TAG + " " + did;
 
-        log.info(TAG, "received registration request: DID " + did + "; registration ID " + registrationId);
+        log.info(tag, "received registration request: registration ID " + registrationId);
         connection.query('REPLACE INTO main (RegistrationId, Did) VALUES (' + connection.escape(registrationId) + ',' +
             connection.escape(did) + ');', function(err) {
                 if (err) {
                     res.json({
                         status: "database_error"
                     });
-                    log.error(TAG, "error inserting registration request into database: DID " + did +
-                        "; registration ID " + registrationId, err);
+                    log.error(tag, "error inserting registration request into database: registration ID " +
+                        registrationId, err);
                 }
                 else {
                     res.json({
                         status: "success"
                     });
-                    log.info(TAG, "inserted registration request into database: DID " + did + "; registration ID " +
-                        registrationId);
+                    log.info(tag, "inserted registration request into database: registration ID " + registrationId);
                 }
             }
         );
@@ -103,15 +102,16 @@ database.connect(function(connection) {
     // Handler for SMS callbacks
     app.use("/sms_callback", function(req, res) {
         var did = req.query["did"];
+        var tag = TAG + " " + did;
 
-        log.info(TAG, "received sms callback request: DID " + did);
+        log.info(tag, "received sms callback request");
         connection.query("SELECT RegistrationId FROM main WHERE Did=" + connection.escape(did) + ";",
             function(err, results) {
                 if (err) {
                     res.json({
                         status: "database_error"
                     });
-                    log.error(TAG, "error accessing database to find registration ID: DID " + did, err);
+                    log.error(tag, "error accessing database to find registration ID", err);
                     return;
                 }
 
@@ -119,12 +119,12 @@ database.connect(function(connection) {
                     res.json({
                         status: "no_reg_id_for_did"
                     });
-                    log.info(TAG, "could not find registration ID: DID " + did);
+                    log.info(tag, "could not find registration ID");
                     return;
                 }
 
                 var registrationId = results[0]["RegistrationId"];
-                log.info(TAG, "registration ID found: DID " + did + "; registration ID " + registrationId);
+                log.info(tag, "registration ID found: " + registrationId);
 
                 var gcmMessage = {
                     registration_ids: [registrationId]
@@ -139,11 +139,11 @@ database.connect(function(connection) {
                     }
                 }, function(gcmRes) {
                     if (gcmRes.statusCode != 200) {
-                        log.error(TAG, "GCM returned response code " + gcmRes.statusCode);
+                        log.error(tag, "GCM returned response code " + gcmRes.statusCode);
                         return;
                     }
                     else {
-                        log.info(TAG, "GCM returned response code 200");
+                        log.info(tag, "GCM returned response code 200");
                     }
 
                     var responseString = "";
@@ -151,14 +151,14 @@ database.connect(function(connection) {
                         responseString += chunk;
                     });
                     gcmRes.on('end', function() {
-                        log.info(TAG, "received full GCM response");
+                        log.info(tag, "GCM full response received");
                         try {
                             var response = JSON.parse(responseString);
                             if (response["failure"] === 0 && response["canonical_ids"] === 0) {
                                 res.json({
                                     status: "success"
                                 });
-                                log.info(TAG, "GCM response ok");
+                                log.info(tag, "GCM response ok");
                             }
                             else {
                                 var result = response["results"][0];
@@ -166,19 +166,19 @@ database.connect(function(connection) {
                                     res.json({
                                         status: "success"
                                     });
-                                    log.info(TAG, "GCM registration ID must be replaced");
+                                    log.info(tag, "GCM registration ID must be replaced");
 
                                     var newRegistrationId = result["registration_id"];
                                     connection.query('REPLACE INTO main (RegistrationId, Did) VALUES (' +
                                         connection.escape(newRegistrationId) + ',' + connection.escape(did) + ');',
                                         function(err) {
                                             if (!err) {
-                                                log.error(TAG, "error inserting new registration ID into database: " +
-                                                    "DID " + did + "; registration ID " + newRegistrationId, err);
+                                                log.error(tag, "error inserting new registration ID into database: " +
+                                                    "new registration ID " + newRegistrationId, err);
                                             }
                                             else {
-                                                log.info(TAG, "inserted new registration ID into database: DID " +
-                                                    did + "; registration ID " + newRegistrationId);
+                                                log.info(tag, "inserted new registration ID into database: " +
+                                                    "new registration ID " + newRegistrationId);
                                             }
                                         }
                                     );
@@ -187,15 +187,15 @@ database.connect(function(connection) {
                                     res.json({
                                         status: "gcm_not_registered_invalid_registration"
                                     });
-                                    log.info(TAG, "GCM registration ID not or no longer valid");
+                                    log.info(tag, "GCM registration ID no longer valid or was never valid");
                                     connection.query("DELETE FROM main WHERE Did=" + connection.escape(did) + ";",
                                         function(err) {
                                             if (err) {
-                                                log.error(TAG, "error accessing database to delete registration " +
-                                                    "ID: DID " + did, err);
+                                                log.error(tag, "error accessing database to delete registration ID",
+                                                    err);
                                             }
                                             else {
-                                                log.info(TAG, "deleted registration ID from database: DID " + did);
+                                                log.info(tag, "deleted registration ID from database");
                                             }
                                         }
                                     );
@@ -204,7 +204,7 @@ database.connect(function(connection) {
                                     res.json({
                                         status: "gcm_unknown_error"
                                     });
-                                    log.error(TAG, "GCM response contained unknown error: result " +
+                                    log.error(tag, "error in GCM response: result " +
                                         util.inspect(result));
                                 }
                             }
@@ -213,7 +213,7 @@ database.connect(function(connection) {
                             res.json({
                                 status: "gcm_parse_error"
                             });
-                            log.error(TAG, "error parsing GCM response: " + data, err);
+                            log.error(tag, "error parsing GCM response: " + data, err);
                         }
                     });
                 });
@@ -221,11 +221,11 @@ database.connect(function(connection) {
                     res.json({
                         status: "gcm_connect_error"
                     });
-                    log.error(TAG, "error connecting to GCM server", err);
+                    log.error(tag, "error connecting to GCM server", err);
                 });
                 gcmRequest.write(JSON.stringify(gcmMessage));
                 gcmRequest.end(null, null, function() {
-                    log.info(TAG, "sent GCM request");
+                    log.info(tag, "GCM request sent");
                 });
             }
         );
