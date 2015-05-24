@@ -16,7 +16,7 @@ The developer hosts an instance of the server using [OpenShift](https://voipmssm
 server, access the SMS settings for your DID on the VoIP.ms portal and enable the 'SMS URL Callback' feature, entering
 the following URL into the neighbouring field:
 
-    http://voipmssms-kourlas.rhcloud.com/sms_callback?did={DID}
+    http://voipmssms-kourlas.rhcloud.com/sms_callback?did={TO}
 
 ## License ##
 
