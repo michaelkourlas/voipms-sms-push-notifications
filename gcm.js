@@ -63,7 +63,7 @@ database.connect(function(connection) {
                 status: "reg_id_empty"
             });
         }
-        else if (!registrationId.match(/^[0-9a-zA-Z\-_]+$/) || registrationId.length > 4096) {
+        else if (registrationId.length > 4096) {
             res.json({
                 status: "reg_id_invalid"
             });
