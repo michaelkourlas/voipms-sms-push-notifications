@@ -2,8 +2,7 @@
 
 ## Overview ##
 
-VoIP.ms SMS Server sends push notifications to [VoIP.ms SMS](https://github.com/michaelkourlas/voipms-sms-client) users
-using Google Cloud Messaging in response to SMS callbacks from VoIP.ms.
+VoIP.ms SMS Server is a Node.js server that sends push notifications to [VoIP.ms SMS](https://github.com/michaelkourlas/voipms-sms-client) users using Google Cloud Messaging in response to SMS callbacks from VoIP.ms.
 
 ## Features ##
 
@@ -17,6 +16,8 @@ server, access the SMS settings for your DID on the VoIP.ms portal and enable th
 the following URL into the neighbouring field:
 
     http://voipmssms-kourlas.rhcloud.com/sms_callback?did={TO}
+    
+The server runs on Node.js and requires access to a MySQL database.
 
 ## License ##
 
