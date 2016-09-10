@@ -20,6 +20,7 @@ var express = require("express");
 var http = require("http");
 var log = require("./log.js");
 var util = require("util");
+var fs = require("fs");
 
 var TAG = "gcm";
 var KEY = fs.readFileSync(process.env["OPENSHIFT_DATA_DIR"] + "/key.txt", {encoding: "UTF-8"});
