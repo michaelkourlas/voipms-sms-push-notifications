@@ -22,7 +22,7 @@ var log = require("./log.js");
 var util = require("util");
 
 var TAG = "gcm";
-var KEY = fs.readFileSync("key.txt", {encoding: "UTF-8"});
+var KEY = fs.readFileSync(process.env["OPENSHIFT_DATA_DIR"] + "/key.txt", {encoding: "UTF-8"});
 
 var app = express();
 
