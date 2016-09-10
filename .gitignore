@@ -12,6 +12,8 @@ node_modules
 # Used to generate .npmignore
 .gitattributes
 
+key.txt
+
 ############
 ## Windows
 ############

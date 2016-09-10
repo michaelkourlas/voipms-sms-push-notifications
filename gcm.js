@@ -22,7 +22,7 @@ var log = require("./log.js");
 var util = require("util");
 
 var TAG = "gcm";
-var KEY = "insert key here";
+var KEY = fs.readFileSync("key.txt", {encoding: "UTF-8"});
 
 var app = express();
 
