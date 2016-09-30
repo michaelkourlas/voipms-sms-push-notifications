@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="server.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="server.js" working-dir="$PROJECT_DIR$">
-    <envs>
-      <env name="DEBUG" value="voipms-sms-server:*" />
-    </envs>
-    <browser url="http://localhost:3000/" />
-    <method />
-  </configuration>
-</component>
