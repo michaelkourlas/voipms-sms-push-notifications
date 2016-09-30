@@ -20,6 +20,7 @@
   "main": "./lib/server.js",
   "typings": "./lib/server",
   "scripts": {
+    "build": "./node_modules/.bin/gulp",
     "start": "supervisor ./lib/server.js"
   },
   "repository": {
