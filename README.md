@@ -1,5 +1,7 @@
 # VoIP.ms SMS Server #
 
+[![Build Status](https://travis-ci.org/michaelkourlas/node-js2xmlparser.svg?branch=master)](https://travis-ci.org/michaelkourlas/node-js2xmlparser)
+
 ## Overview ##
 
 VoIP.ms SMS Server is a Node.js server that sends push notifications to 
