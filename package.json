@@ -1,16 +1,52 @@
 {
   "name": "voipms-sms-server",
-  "version": "0.1.0",
-  "description": "Sends push notifications to VoIP.ms SMS users using Google Cloud Messaging in response to SMS callbacks from VoIP.ms.",
+  "version": "0.2.0",
+  "description": "Sends push notifications to VoIP.ms SMS users using Firebase Cloud Messaging in response to SMS callbacks from VoIP.ms.",
   "homepage": "https://github.com/michaelkourlas/voipms-sms-server",
-  "license": "MIT",
-  "author": "Michael Kourlas <michael@kourlas.net>",
-  "main": "server.js",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Michael Kourlas",
+    "email": "michael@kourlas.net"
+  },
+  "files": [
+    "lib",
+    "CHANGES.md",
+    "LICENSE.md",
+    "NOTICE.md",
+    "npm-shrinkwrap.json",
+    "package.json",
+    "README.md"
+  ],
+  "main": "./lib/server.js",
+  "typings": "./lib/server",
   "scripts": {
-    "start": "supervisor server.js"
+    "start": "supervisor ./lib/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/michaelkourlas/voipms-sms-server.git"
   },
   "dependencies": {
-    "mysql": "*",
-    "express": "*"
+    "@types/es6-shim": "^0.31.32",
+    "@types/express": "^4.0.33",
+    "@types/mysql": "0.0.29",
+    "@types/winston": "0.0.28",
+    "es6-shim": "^0.35.1",
+    "express": "^4.14.0",
+    "mysql": "^2.11.1",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^6.1.2",
+    "gulp-typescript": "^3.0.1",
+    "merge2": "^1.0.2",
+    "tslint": "^3.15.1",
+    "typedoc": "^0.4.5",
+    "typescript": "^2.0.3"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   }
 }
