@@ -27,31 +27,30 @@ export class Fcm {
                                             oldRegIds?: string[],
                                             newRegIds?: string[]) => any): void
     {
+        log.info("FCM response received", {did, responseCode: res.statusCode});
         if (res.statusCode !== 200) {
-            log.error(`FCM returned response code ${res.statusCode}`, {did});
-            callback("gcm_response_code_error");
+            callback("fcm_response_code_error");
         }
-        log.info("FCM returned response code 200");
 
         let rawResponse = "";
         res.on("data", (data) => {
             rawResponse += data;
         });
         res.on("end", () => {
-            log.info("FCM response received", {did});
             let response: any;
             try {
                 response = JSON.parse(rawResponse);
             } catch (err) {
                 log.info("Error parsing FCM response as JSON",
                          {did, rawResponse});
-                callback("gcm_json_parse_error");
+                callback("fcm_json_parse_error");
                 return;
             }
-            log.info("FCM response parsed", {did, response});
+            log.info("FCM response parsed",
+                     {did, response: JSON.stringify(response)});
 
             if (response.failure === 0 && response.canonical_ids === 0) {
-                log.info("FCM response ok", {did});
+                log.info("FCM response OK", {did});
                 callback();
                 return;
             }
@@ -60,9 +59,9 @@ export class Fcm {
             if (!Array.isArray(results)
                 || results.length !== registrationIds.length)
             {
-                log.error("FCM results array does not match registration IDs"
-                          + " array", {did});
-                callback("gcm_parse_error");
+                log.error("FCM results array is not valid or does not match"
+                          + " request registration IDs array", {did});
+                callback("fcm_parse_error");
             }
 
             let oldRegistrationIds: string[] = [];
@@ -72,8 +71,8 @@ export class Fcm {
                 const result = results[i];
                 if (result.message_id && result.registration_id) {
                     const newRegistrationId = result.registration_id;
-                    log.info(`FCM registration ID ${oldRegistrationId} must be`
-                             + ` replaced with ${newRegistrationId}`);
+                    log.info("FCM registration ID must be replaced",
+                             {did, oldRegistrationId, newRegistrationId});
                     oldRegistrationIds.push(oldRegistrationId);
                     newRegistrationIds.push(newRegistrationId);
                 } else if (result.error === "NotRegistered"
@@ -82,7 +81,7 @@ export class Fcm {
                     oldRegistrationIds.push(oldRegistrationId);
                 } else {
                     log.error("FCM unknown error", {did});
-                    callback("gcm_parse_error");
+                    callback("fcm_parse_error");
                 }
             }
 
@@ -94,9 +93,9 @@ export class Fcm {
                               did: string,
                               callback: (err?: string) => any): void
     {
-        log.error("Error connecting to GCM server",
-                  {err, did});
-        callback("gcm_connect_error");
+        log.error("Error connecting to FCM server",
+                  {did, err});
+        callback("fcm_connect_error");
     }
 
     private _key: string;
@@ -105,16 +104,16 @@ export class Fcm {
         this._key = key;
     }
 
-    public sendMessage(did: string, registrationIds: string[],
+    public sendRequest(did: string, registrationIds: string[],
                        callback: (err?: string,
                                   oldRegistrationIds?: string[],
                                   newRegistrationIds?: string[]) => any): void
     {
-        const gcmMessage = {
+        const fcmMessage = {
             data: {},
             registration_ids: registrationIds
         };
-        const gcmRequest = https.request(
+        const fcmRequest = https.request(
             {
                 headers: {
                     "Authorization": "key=" + this._key,
@@ -125,14 +124,15 @@ export class Fcm {
                 path: "/fcm/send"
             }
         );
-        gcmRequest.on("response", (res: http.IncomingMessage) => {
+        fcmRequest.on("response", (res: http.IncomingMessage) => {
             Fcm.onFcmResponse(res, did, registrationIds, callback);
         });
-        gcmRequest.on("error", (err) => {
+        fcmRequest.on("error", (err) => {
             Fcm.onFcmError(err, did, callback);
         });
-        gcmRequest.end(JSON.stringify(gcmMessage), undefined, () => {
-            log.info("FCM message sent", {did, gcmMessage});
+        fcmRequest.end(JSON.stringify(fcmMessage), undefined, () => {
+            log.info("FCM request sent",
+                     {did, request: JSON.stringify(fcmMessage)});
         });
     }
 }

@@ -18,6 +18,7 @@
 import {Database} from "./db";
 import {Fcm} from "./fcm";
 import * as express from "express";
+import * as log from "winston";
 
 export class Server {
     private _app: express.Application;
@@ -94,35 +95,41 @@ export class Server {
         this._app.use("/sms_callback", (req, res) => {
             const did = req.query.did;
 
+            log.info("Received SMS callback request", {did});
             this._db.getRegistrationIds(did, (err, registrationIds) => {
                 if (err || !registrationIds) {
                     res.json({status: err});
                     return;
                 }
 
-                this._fcm.sendMessage(
+                this._fcm.sendRequest(
                     did,
                     registrationIds,
                     (err2, oldRegistrationIds, newRegistrationIds) => {
-                        if (err2 || !oldRegistrationIds
-                            || !newRegistrationIds)
-                        {
+                        if (err2) {
                             res.json({status: err2});
                             return;
                         }
 
-                        if (oldRegistrationIds.length > 0) {
+                        if (oldRegistrationIds
+                            && oldRegistrationIds.length > 0)
+                        {
                             res.json({status: "gcm_remove_old"});
                         } else {
                             res.json({status: "success"});
                         }
 
-                        for (const registrationId of oldRegistrationIds) {
-                            this._db.removeRegistrationId(did, registrationId);
+                        if (oldRegistrationIds) {
+                            for (const registrationId of oldRegistrationIds) {
+                                this._db.removeRegistrationId(did,
+                                                              registrationId);
+                            }
                         }
 
-                        for (const registrationId of newRegistrationIds) {
-                            this._db.addRegistrationId(did, registrationId);
+                        if (newRegistrationIds) {
+                            for (const registrationId of newRegistrationIds) {
+                                this._db.addRegistrationId(did, registrationId);
+                            }
                         }
                     }
                 );
@@ -131,9 +138,10 @@ export class Server {
     }
 
     private addStaticHandler(): void {
-        this._app.use(express.static(__dirname + "/public"));
+        this._app.use(express.static(__dirname + "/../public"));
         this._app.use((_, res) => {
-            res.sendFile(__dirname + "/public/index.html");
+            res.status(404);
+            res.type("txt").send("Not found");
         });
     }
 

@@ -19,6 +19,19 @@ import "es6-shim";
 import {IConnection, createConnection} from "mysql";
 import * as log from "winston";
 
+const TABLE_NAME = "main2";
+const COLUMN_ID = "Id";
+const COLUMN_DID = "Did";
+const COLUMN_REGISTRATION_ID = "RegistrationId";
+
+const create = `
+CREATE TABLE IF NOT EXISTS ${TABLE_NAME} (
+  ${COLUMN_ID} int(11) NOT NULL AUTO_INCREMENT,
+  ${COLUMN_DID} varchar(10) NOT NULL,
+  ${COLUMN_REGISTRATION_ID} varchar(4096) NOT NULL,
+  PRIMARY KEY (${COLUMN_ID})
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;`;
+
 const config = {
     database: "voipmssms",
     host: process.env.OPENSHIFT_MYSQL_DB_HOST || "127.0.0.1",
@@ -26,10 +39,6 @@ const config = {
     port: process.env.OPENSHIFT_MYSQL_DB_PORT || "3306",
     user: process.env.OPENSHIFT_MYSQL_DB_USERNAME || "admin"
 };
-
-const TABLE_NAME = "main2";
-const COLUMN_DID = "Did";
-const COLUMN_REGISTRATION_ID = "RegistrationId";
 
 export class Database {
     private _connection: IConnection;
@@ -39,14 +48,20 @@ export class Database {
     }
 
     public connect(callback: (err?: string) => any): void {
-        log.info("Connecting to database");
         this._connection.connect((err) => {
             if (err) {
-                log.error(`Error connecting to database`, {err});
+                log.error("Error connecting to database", {err});
                 callback("err");
             }
             log.info("Connected to database", {config});
-            callback();
+
+            this._connection.query(create, (err2) => {
+                if (err2) {
+                    log.error("Error creating table", {err2});
+                }
+                callback();
+            });
+
         });
     }
 
@@ -54,22 +69,22 @@ export class Database {
                              registrationId: string,
                              callback?: (err?: string) => any): void
     {
-        log.info(`Received registration request: ${registrationId}`, {did});
+        log.info("Received registration ID insertion request",
+                 {did, registrationId});
         this._connection.query(
             `INSERT INTO ${TABLE_NAME} (${COLUMN_DID},`
             + ` ${COLUMN_REGISTRATION_ID}) VALUES (?, ?)`,
             [did, registrationId],
             (err) => {
                 if (err) {
-                    log.error(`Error inserting registration request into`
-                              + ` database: ${registrationId}`, {did, err});
+                    log.error("Error inserting registration ID into"
+                              + " database", {did, err});
                     if (callback) {
                         callback("database_error");
                     }
                     return;
                 }
-                log.info(`Inserted registration request into database:`
-                         + ` ${registrationId}`, {did});
+                log.info("Inserted registration ID into database", {did});
                 if (callback) {
                     callback();
                 }
@@ -81,23 +96,22 @@ export class Database {
                                 registrationId: string,
                                 callback?: (err?: string) => any): void
     {
-        log.info(`Received registration deletion request: ${registrationId}`,
-                 {did});
+        log.info("Received registration ID deletion request",
+                 {did, registrationId});
         this._connection.query(
             `DELETE FROM ${TABLE_NAME} WHERE ${COLUMN_DID}=? AND`
             + ` ${COLUMN_REGISTRATION_ID}=?`,
             [did, registrationId],
             (err) => {
                 if (err) {
-                    log.error(`Error removing registration ID into`
-                              + ` database: ${registrationId}`, {did, err});
+                    log.error("Error deleting registration ID from"
+                              + " database", {did, err});
                     if (callback) {
                         callback("database_error");
                     }
                     return;
                 }
-                log.info(`Removed registration ID from database:`
-                         + ` ${registrationId}`, {did});
+                log.info("Delete registration ID from database", {did});
                 if (callback) {
                     callback();
                 }
@@ -105,19 +119,19 @@ export class Database {
         );
     }
 
-    public getRegistrationIds(
-        did: string,
-        callback: (err?: string, registrationIds?: string[]) => any): void
+    public getRegistrationIds(did: string,
+                              callback: (err?: string,
+                                         regIds?: string[]) => any): void
     {
-        log.info("Received sms callback request", {did});
+        log.info("Received registration ID retrieval request", {did});
         this._connection.query(
             `SELECT ${COLUMN_REGISTRATION_ID} FROM ${TABLE_NAME}`
             + ` WHERE ${COLUMN_DID}=?`,
             [did],
             (err, results) => {
                 if (err) {
-                    log.error("Error accessing database to find registration"
-                              + " ID", {did});
+                    log.error("Error retrieving registration ID from database",
+                              {did, err});
                     callback("database_error");
                     return;
                 }
@@ -125,8 +139,8 @@ export class Database {
                 let registrationIds: string[] = [];
                 for (const result of results) {
                     registrationIds.push(result.RegistrationId);
-                    log.info(`Registration ID found: ${result.RegistrationId}`,
-                             {did});
+                    log.info("Registration ID found",
+                             {did, registrationId: result.RegistrationId});
                 }
 
                 if (registrationIds.length === 0) {

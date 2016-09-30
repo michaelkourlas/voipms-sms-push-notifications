@@ -20,21 +20,20 @@ import * as fs from "fs";
 import * as http from "http";
 import * as log from "winston";
 
-const ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-const port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-log.info(`Initializing server on ${ip}:${port}`);
+const IP = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+const PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+const KEY_PATH = process.env.OPENSHIFT_DATA_DIR ?
+                 `${process.env.OPENSHIFT_DATA_DIR}/key.txt` : "./data/key.txt";
+const KEY = fs.readFileSync(KEY_PATH, {encoding: "UTF-8"}).trim();
 
-const key = fs.readFileSync(`${process.env.OPENSHIFT_DATA_DIR}/key.txt`,
-                            {encoding: "UTF-8"});
-
-const server = new Server(key);
+const server = new Server(KEY);
 server.init(() => {
     const httpServer = http.createServer(server.app);
     httpServer.on("listening", () => {
-        log.info("Server listening");
+        log.info(`Server listening on ${IP}:${PORT}`);
     });
-    httpServer.on("error", (err: Error) => {
-        log.error(`Error occurred while starting server: ${err.stack}`);
+    httpServer.on("error", (err) => {
+        log.error("Error occurred while starting server", {err});
     });
-    httpServer.listen(port, ip);
+    httpServer.listen(PORT, IP);
 });
