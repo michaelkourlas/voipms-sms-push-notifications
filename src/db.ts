@@ -53,7 +53,15 @@ export class Database {
                 log.error("Error connecting to database", {err});
                 callback("err");
             }
-            log.info("Connected to database", {config});
+            /* tslint:disable:object-literal-sort-keys */
+            log.info("Connected to database",
+                     {
+                         name: config.database,
+                         host: config.host,
+                         port: config.port,
+                         user: config.user
+                     });
+            /* tslint:enable:object-literal-sort-keys */
 
             this._connection.query(create, (err2) => {
                 if (err2) {
@@ -111,7 +119,7 @@ export class Database {
                     }
                     return;
                 }
-                log.info("Delete registration ID from database", {did});
+                log.info("Deleted registration ID from database", {did});
                 if (callback) {
                     callback();
                 }
@@ -144,7 +152,7 @@ export class Database {
                 }
 
                 if (registrationIds.length === 0) {
-                    log.error("No registration IDs found");
+                    log.error("No registration IDs found", {did});
                     callback("no_reg_id_for_did");
                     return;
                 }

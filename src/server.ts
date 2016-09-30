@@ -111,13 +111,7 @@ export class Server {
                             return;
                         }
 
-                        if (oldRegistrationIds
-                            && oldRegistrationIds.length > 0)
-                        {
-                            res.json({status: "gcm_remove_old"});
-                        } else {
-                            res.json({status: "success"});
-                        }
+                        res.json({status: "success"});
 
                         if (oldRegistrationIds) {
                             for (const registrationId of oldRegistrationIds) {

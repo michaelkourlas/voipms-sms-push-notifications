@@ -29,7 +29,9 @@ export class Fcm {
     {
         log.info("FCM response received", {did, responseCode: res.statusCode});
         if (res.statusCode !== 200) {
+            log.error("FCM response contains invalid response code", {did});
             callback("fcm_response_code_error");
+            return;
         }
 
         let rawResponse = "";
@@ -49,8 +51,11 @@ export class Fcm {
             log.info("FCM response parsed",
                      {did, response: JSON.stringify(response)});
 
-            if (response.failure === 0 && response.canonical_ids === 0) {
-                log.info("FCM response OK", {did});
+            if (response.success === registrationIds.length
+                && response.failure === 0
+                && response.canonical_ids === 0)
+            {
+                log.info("FCM response all OK", {did});
                 callback();
                 return;
             }
@@ -62,6 +67,7 @@ export class Fcm {
                 log.error("FCM results array is not valid or does not match"
                           + " request registration IDs array", {did});
                 callback("fcm_parse_error");
+                return;
             }
 
             let oldRegistrationIds: string[] = [];
@@ -69,19 +75,29 @@ export class Fcm {
             for (let i = 0; i < response.results.length; i++) {
                 const oldRegistrationId = registrationIds[i];
                 const result = results[i];
-                if (result.message_id && result.registration_id) {
+
+                if (result.message_id) {
+                    log.info(`FCM response OK for entry ${i}`,
+                             {did});
+                } else {
+                    log.warn(`FCM response error for entry ${i}`,
+                             {did, error: result.error});
+                }
+
+                if (result.registration_id) {
                     const newRegistrationId = result.registration_id;
-                    log.info("FCM registration ID must be replaced",
+                    log.warn("FCM registration ID must be replaced",
                              {did, oldRegistrationId, newRegistrationId});
                     oldRegistrationIds.push(oldRegistrationId);
                     newRegistrationIds.push(newRegistrationId);
-                } else if (result.error === "NotRegistered"
-                           || result.error === "InvalidRegistration")
+                }
+
+                if (result.error === "NotRegistered"
+                    || result.error === "InvalidRegistration")
                 {
+                    log.warn("FCM registration ID must be removed",
+                             {did, oldRegistrationId});
                     oldRegistrationIds.push(oldRegistrationId);
-                } else {
-                    log.error("FCM unknown error", {did});
-                    callback("fcm_parse_error");
                 }
             }
 
@@ -110,7 +126,7 @@ export class Fcm {
                                   newRegistrationIds?: string[]) => any): void
     {
         const fcmMessage = {
-            data: {},
+            data: {did},
             registration_ids: registrationIds
         };
         const fcmRequest = https.request(
