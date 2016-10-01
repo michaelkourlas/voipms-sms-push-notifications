@@ -27,7 +27,7 @@ const create = `
 CREATE TABLE IF NOT EXISTS ${TABLE_NAME} (
   ${COLUMN_ID} int(11) NOT NULL AUTO_INCREMENT,
   ${COLUMN_DID} varchar(10) NOT NULL,
-  ${COLUMN_REGISTRATION_ID} varchar(255) NOT NULL UNIQUE,
+  ${COLUMN_REGISTRATION_ID} varchar(255) NOT NULL,
   PRIMARY KEY (${COLUMN_ID})
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;`;
 
@@ -145,9 +145,11 @@ export class Database {
 
                 let registrationIds: string[] = [];
                 for (const result of results) {
-                    registrationIds.push(result.RegistrationId);
-                    log.info("Registration ID found",
-                             {did, registrationId: result.RegistrationId});
+                    if (registrationIds.indexOf(result) === -1) {
+                        registrationIds.push(result.RegistrationId);
+                        log.info("Registration ID found",
+                                 {did, registrationId: result.RegistrationId});
+                    }
                 }
 
                 if (registrationIds.length === 0) {
