@@ -27,7 +27,7 @@ const create = `
 CREATE TABLE IF NOT EXISTS ${TABLE_NAME} (
   ${COLUMN_ID} int(11) NOT NULL AUTO_INCREMENT,
   ${COLUMN_DID} varchar(10) NOT NULL,
-  ${COLUMN_REGISTRATION_ID} varchar(4096) NOT NULL,
+  ${COLUMN_REGISTRATION_ID} varchar(255) NOT NULL UNIQUE,
   PRIMARY KEY (${COLUMN_ID})
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;`;
 
@@ -79,7 +79,7 @@ export class Database {
         log.info("Received registration ID insertion request",
                  {did, registrationId});
         this._connection.query(
-            `INSERT INTO ${TABLE_NAME} (${COLUMN_DID},`
+            `REPLACE INTO ${TABLE_NAME} (${COLUMN_DID},`
             + ` ${COLUMN_REGISTRATION_ID}) VALUES (?, ?)`,
             [did, registrationId],
             (err) => {
