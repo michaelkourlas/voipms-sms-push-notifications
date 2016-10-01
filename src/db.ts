@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-import "es6-shim";
 import {IConnection, createConnection} from "mysql";
 import * as log from "winston";
 
