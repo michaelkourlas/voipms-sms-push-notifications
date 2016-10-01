@@ -127,6 +127,7 @@ export class Fcm {
     {
         const fcmMessage = {
             data: {did},
+            priority: "high",
             registration_ids: registrationIds
         };
         const fcmRequest = https.request(
