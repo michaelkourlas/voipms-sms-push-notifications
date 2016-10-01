@@ -17,10 +17,10 @@
     "package.json",
     "README.md"
   ],
-  "main": "./lib/server.js",
-  "typings": "./lib/server",
+  "main": "./lib/main.js",
+  "typings": "./lib/main",
   "scripts": {
-    "start": "supervisor ./lib/server.js"
+    "start": "supervisor ./lib/main.js"
   },
   "repository": {
     "type": "git",
