@@ -25,6 +25,27 @@ Callback' feature, entering the following URL into the neighbouring field:
     
 The server runs on Node.js and requires access to a MySQL database.
 
+You can also build VoIP.ms SMS Server from source using gulp:
+
+```
+git clone https://github.com/michaelkourlas/voipms-sms-server.git
+npm install
+gulp
+```
+
+You'll need to install gulp first if you don't have it:
+
+```
+npm install -g gulp
+```
+
+You can then copy the folder into your node_modules directory.
+
+The `default` and `prod` targets will build the production variant of VoIP.ms 
+SMS Server. You can also build the development version using the target `dev`.
+At the moment, the only difference between the two is that the development 
+version includes source maps.
+
 ## License ##
 
 VoIP.ms SMS Server is licensed under the Apache License 2.0. Please see the 
