@@ -48,5 +48,5 @@ version includes source maps.
 
 ## License ##
 
-VoIP.ms SMS Server is licensed under the Apache License 2.0. Please see the 
-LICENSE.md file for more information.
+VoIP.ms SMS Server is licensed under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+Please see the LICENSE.md file for more information.
