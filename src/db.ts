@@ -145,7 +145,7 @@ export class Database {
 
                 let registrationIds: string[] = [];
                 for (const result of results) {
-                    if (registrationIds.indexOf(result) === -1) {
+                    if (registrationIds.indexOf(result.RegistrationId) === -1) {
                         registrationIds.push(result.RegistrationId);
                         log.info("Registration ID found",
                                  {did, registrationId: result.RegistrationId});
