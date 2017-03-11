@@ -21,7 +21,7 @@ The developer hosts an instance of the server using
 the SMS settings for your DID on the VoIP.ms portal and enable the 'SMS URL 
 Callback' feature, entering the following URL into the neighbouring field:
 
-    http://voipmssms-kourlas.rhcloud.com/sms_callback?did={TO}
+    https://voipmssms-kourlas.rhcloud.com/sms_callback?did={TO}
     
 The server runs on Node.js and requires access to a MySQL database.
 
