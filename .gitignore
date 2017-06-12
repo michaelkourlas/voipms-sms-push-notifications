@@ -1,11 +1,8 @@
 # WebStorm
 .idea/
 
-# JavaScript and TypeScript
-lib/
-
 # Node.js
-node_modules/
+functions/node_modules/
 
-# FCM
-data
+# Firebase
+.firebaserc
