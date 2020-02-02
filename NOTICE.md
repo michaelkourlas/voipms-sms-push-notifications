@@ -1,2 +1,2 @@
-Firebase Cloud Function for VoIP.ms SMS  
-Copyright (C) 2017-2019 Michael Kourlas
+Firebase Cloud Function for VoIP.ms SMS
+Copyright (C) 2017-2020 Michael Kourlas
