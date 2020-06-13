@@ -1,13 +1,9 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 
-admin.initializeApp(functions.config().firebase);
+admin.initializeApp();
 
 function isDid(str) {
-    // DIDs must be 10 digit numbers
-    if (str.length != 10) {
-        return false;
-    }
     for (let i = 0; i < str.length; i++) {
         const c = str.charCodeAt(i);
         if (c < 48 || c > 57) {
