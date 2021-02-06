@@ -1,8 +1,6 @@
-# WebStorm
-.idea/
-
 # Node.js
-functions/node_modules/
+node_modules/
+bundle.zip
 
 # Firebase
-.firebaserc
+voip-ms-sms-9ee2b-firebase-adminsdk-t66ep-198fcd7792.json

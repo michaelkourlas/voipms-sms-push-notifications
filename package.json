@@ -1,0 +1,25 @@
+{
+    "name": "voipms-sms-firebase",
+    "description": "IBM Cloud Function for VoIP.ms SMS",
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Michael Kourlas",
+        "email": "michael@kourlas.com"
+    },
+    "main": "./index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/michaelkourlas/voipms-sms-firebase.git"
+    },
+    "scripts": {
+        "bundle": "bestzip bundle.zip package.json index.js voip-ms-sms-9ee2b-firebase-adminsdk-t66ep-198fcd7792.json node_modules",
+        "upload": "ibmcloud fn action update voipmssms-notify bundle.zip --kind nodejs:12",
+        "deploy": "npm run-script bundle && npm run-script upload"
+    },
+    "dependencies": {
+        "firebase-admin": "9.4.2"
+    },
+    "devDependencies": {
+        "bestzip": "^2.1.7"
+    }
+}
