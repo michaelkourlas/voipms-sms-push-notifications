@@ -17,7 +17,7 @@
         "deploy": "npm run-script bundle && npm run-script upload"
     },
     "dependencies": {
-        "firebase-admin": "9.4.2"
+        "firebase-admin": "11.4.1"
     },
     "devDependencies": {
         "bestzip": "^2.1.7"
