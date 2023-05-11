@@ -2,7 +2,7 @@ const admin = require("firebase-admin");
 const process = require("process");
 
 process.env["GOOGLE_APPLICATION_CREDENTIALS"] =
-    "./voip-ms-sms-9ee2b-firebase-adminsdk-t66ep-198fcd7792.json";
+    "./voip-ms-sms-9ee2b-firebase-adminsdk-t66ep-2a0be3ffad.json";
 
 admin.initializeApp({
     credential: admin.credential.applicationDefault(),

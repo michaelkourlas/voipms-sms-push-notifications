@@ -12,14 +12,14 @@
         "url": "git://github.com/michaelkourlas/voipms-sms-firebase.git"
     },
     "scripts": {
-        "bundle": "bestzip bundle.zip package.json index.js voip-ms-sms-9ee2b-firebase-adminsdk-t66ep-198fcd7792.json node_modules",
-        "upload": "ibmcloud fn action update voipmssms-notify bundle.zip --kind nodejs:12",
+        "bundle": "bestzip bundle.zip package.json index.js voip-ms-sms-9ee2b-firebase-adminsdk-t66ep-2a0be3ffad.json node_modules",
+        "upload": "ibmcloud fn action update voipmssms-notify bundle.zip --kind nodejs:16",
         "deploy": "npm run-script bundle && npm run-script upload"
     },
     "dependencies": {
-        "firebase-admin": "9.4.2"
+        "firebase-admin": "11.8.0"
     },
     "devDependencies": {
-        "bestzip": "^2.1.7"
+        "bestzip": "^2.2.1"
     }
 }
