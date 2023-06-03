@@ -33,7 +33,7 @@ function main(params) {
     const message = {
         android: {
             priority: "high",
-            ttl: 0
+            collapse_key: "sms"
         },
         data: {},
         topic: `did-${did}`
