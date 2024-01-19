@@ -1,6 +1,9 @@
 # Node.js
 node_modules/
-bundle.zip
 
 # Firebase
 voip-ms-sms-9ee2b-firebase-adminsdk-t66ep-2a0be3ffad.json
+
+# Wrangler
+.dev.vars
+.wrangler/
